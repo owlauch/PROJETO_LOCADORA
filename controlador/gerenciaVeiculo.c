@@ -4,6 +4,10 @@ int cadastrarveiculo()
 {
    int i = 0;
    Veiculo veiculo;
+   char eco[] = "economica";
+   char inter[] = "intermediaria";
+   char luxo[] = "luxo";
+
    printf("Digite placa do veiculo \n");
    gets(veiculo.placa);
    fflush(stdin);
@@ -19,11 +23,39 @@ int cadastrarveiculo()
    printf("Digite a cor do veiculo \n");
    gets(veiculo.cor);
    fflush(stdin);
-   printf("Escolha a categoria do veiculo \n");
-   printf("1 - economica  \n");
-   printf("2 - intermediaria \n");
-   printf("3 - luxo \n");
-   gets(veiculo.categoria);
+   do
+   {
+      printf("Escolha a categoria do veiculo \n");
+      printf("1 - economica  \n");
+      printf("2 - intermediaria \n");
+      printf("3 - luxo \n");
+      scanf("%d", &i);
+      fflush(stdin);
+      if (i > 3 || i < 0)
+      {
+         printf("Opcao invalida tente novamente");
+         getchar();
+         fflush(stdin);
+         system("cls");
+      }
+      else
+      {
+         switch (i)
+         {
+         case 1:
+            strcpy(veiculo.categoria, eco);
+            break;
+         case 2:
+            strcpy(veiculo.categoria, inter);
+            break;
+         case 3:
+            strcpy(veiculo.categoria, luxo);
+            break;
+         default:
+            break;
+         }
+      }
+   } while (i > 3 || i < 0);
    fflush(stdin);
    printf("Digite o ano do veiculo \n");
    gets(veiculo.anoVeiculo);
@@ -32,9 +64,9 @@ int cadastrarveiculo()
    gets(veiculo.combustivel);
    fflush(stdin);
    printf("Digite o valor do veiculo \n");
-   scanf("%f",&veiculo.valor);
+   scanf("%f", &veiculo.valor);
    fflush(stdin);
-   gravarCliente(veiculo);
+   gravarVeiculo(veiculo);
 }
 
 int buscarveiculo()

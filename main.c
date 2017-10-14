@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "estruturas/conteinerEstruturas.c"
 #include "controlador/menuPrincipal.c"
@@ -9,9 +10,9 @@
 
 int main(int argc, char const *argv[])
 {
-   // menuPrincipal();
+   menuPrincipal();
    
-   cadastrarCliente();
+   // cadastrarCliente();
    // Cliente cliente;
    // gets(cliente.nome);
    // gravarCliente(cliente); 
