@@ -1,9 +1,7 @@
 
-struct veiculo
+struct
 {
    int id;
-   String placa, renavam, marca, modelo, cor, categoria;
-   data anoVeiculo;
-   int combustivel;
+   String placa, renavam, marca, modelo, cor, categoria,anoVeiculo,combustivel;
    float valores;
-}veiculo;
+}Veiculo;

@@ -1,3 +1,4 @@
+#include "..\banco\DAOConteiner.c"
 #include "gerenciaCliente.c"
 #include "gerenciaVeiculo.c"
 #include "gerenciaLocacao.c"

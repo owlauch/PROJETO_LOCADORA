@@ -2,6 +2,39 @@ void menuPrincipal();
 
 int cadastrarveiculo()
 {
+   int i = 0;
+   Veiculo veiculo;
+   printf("Digite placa do veiculo \n");
+   gets(veiculo.placa);
+   fflush(stdin);
+   printf("Digite o n° do renavam \n");
+   gets(veiculo.renavam);
+   fflush(stdin);
+   printf("Digite a marca do veiculo \n");
+   gets(veiculo.marca);
+   fflush(stdin);
+   printf("Digite o modelo do veiculo \n");
+   gets(veiculo.modelo);
+   fflush(stdin);
+   printf("Digite a cor do veiculo \n");
+   gets(veiculo.cor);
+   fflush(stdin);
+   printf("Escolha a categoria do veiculo \n");
+   printf("1 - economica  \n");
+   printf("2 - intermediaria \n");
+   printf("3 - luxo \n");
+   gets(veiculo.categoria);
+   fflush(stdin);
+   printf("Digite o ano do veiculo \n");
+   gets(veiculo.anoVeiculo);
+   fflush(stdin);
+   printf("Digite o combustivel do veiculo \n");
+   gets(veiculo.combustivel);
+   fflush(stdin);
+   printf("Digite o valor do veiculo \n");
+   scanf("%f",&veiculo.valor);
+   fflush(stdin);
+   gravarCliente(veiculo);
 }
 
 int buscarveiculo()

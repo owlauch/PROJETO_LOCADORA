@@ -1,8 +1,9 @@
 void menuPrincipal();
 
-int cadastrarCliente()
+void cadastrarCliente()
 {
    int i = 0;
+   Cliente cliente;
    printf("Digite o nome do cliente \n");
    gets(cliente.nome);
    fflush(stdin);
@@ -18,26 +19,13 @@ int cadastrarCliente()
    printf("Digite a CNH do cliente \n");
    gets(cliente.cnh);
    fflush(stdin);
-   printf("Digite o Dia de nascimento do cliente \n");
-   scanf("%d", &cliente.nascimento.dia);
+   printf("Digite a data de nascimento do cliente \n");
+   gets(cliente.nascimento);
    fflush(stdin);
-   printf("digite o Mes de nascimento do cliente \n");
-   scanf("%d", &cliente.nascimento.mes);
+   printf("Digite o data da validade da CNH\n");
+   gets(cliente.validadeCNH);
    fflush(stdin);
-   printf("Digite o Ano de nascimento do cliente \n");
-   scanf("%d", &cliente.nascimento.ano);
-   fflush(stdin);
-   printf("Digite o Dia da validade da CNH\n");
-   scanf("%d", &cliente.validadeCNH.dia);
-   fflush(stdin);
-   printf("Digite o Mes da validade da CNH\n");
-   scanf("%d", &cliente.validadeCNH.mes);
-   fflush(stdin);
-   printf("Digite o Ano da validade da CNH\n");
-   scanf("%d", &cliente.validadeCNH.ano);
-   fflush(stdin);
-   printf("Cadastrado com sucesso");
-   return i;
+   gravarCliente(cliente);
 };
 
 int buscarCliente()
