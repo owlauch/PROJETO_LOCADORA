@@ -1,5 +1,5 @@
 
-struct locado{
-   int id_cliente, id_Veiculo,dias_locados;
-   data locacao,devolucao;
-}locado;
+typedef struct {
+   int id_cliente, id_Veiculo,diaslocado;
+   String dataLocacao, dataDevolucao; 
+}Locado;

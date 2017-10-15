@@ -3,3 +3,4 @@
 3333|1234|celta||branco|economica|2010|gasolina|25.000000
 4444|4444|celta|muito bom |branca|intermediaria|2015|flex|25000.000000
 5555|5555|ford|ka|gelo|luxo|2010|flex|20000.000000
+101010|101010|legal|bacana|gelo|luxo|2019|flex|289.899994

@@ -1,5 +1,6 @@
 void menuPrincipal();
-void mostrarCliente();
+int mostrarCliente();
+void gerenciadorClientes();
 
 void cadastrarCliente()
 {
@@ -27,6 +28,7 @@ void cadastrarCliente()
    gets(cliente.validadeCNH);
    fflush(stdin);
    gravarCliente(cliente);
+   menuPrincipal();
 };
 
 void buscarCliente()
@@ -36,12 +38,15 @@ void buscarCliente()
    gets(cpf);
    fflush(stdin);
    lerCliente(cpf);
+   getchar();
+   fflush(stdin);
+   gerenciadorClientes();
 }
 
 int deletarCliente()
 {
 }
-void mostrarCliente(String cliente){
+int mostrarCliente(String cliente,int idcliente){
    int contPipe=0, cont[10]={0,0,0,0,0,0,0,0,0,0};
    String nome={0}, cpf={0},rg={0},nacionalidade={0},cnh={0},nascimento = {0},validadeCNH={0};
    for(int i = 0; cliente[i]; i++)
@@ -85,7 +90,7 @@ void mostrarCliente(String cliente){
    printf("CNH:%s\n",cnh);
    printf("Nascimento:%s\n",nascimento);
    printf("Validade CNH:%s\n  ",validadeCNH);
-
+   return 1+idcliente;
 }
 void mostrarClientes()
 {
@@ -104,9 +109,9 @@ int selecionarOC()
    printf("Selecione uma Opcao:\n");
    printf("1 - Cadastrar Cliente\n");
    printf("2 - Buscar Cliente\n");
-   printf("3 - Mostrar Todos Clientes\n");
-   printf("4 - Apagar Cliente\n");
-   printf("5 - Editar Cliente\n");
+   // printf("3 - Mostrar Todos Clientes\n");
+   // printf("4 - Apagar Cliente\n");
+   // printf("5 - Editar Cliente\n");
    printf("6 - Menu Principal \n");
    scanf("%d", &i);
    fflush(stdin);
@@ -115,6 +120,7 @@ int selecionarOC()
 
 void gerenciadorClientes()
 {
+   system("cls");
    int selecionado;
    selecionado = selecionarOC();
    switch (selecionado)
@@ -129,15 +135,18 @@ void gerenciadorClientes()
       break;
    case 3:
       system("cls");
-      mostrarClientes();
+      gerenciadorClientes();
+      // mostrarClientes();
       break;
    case 4:
       system("cls");
-      apagarcliente();
+      gerenciadorClientes();
+      // apagarcliente();
       break;
    case 5:
       system("cls");
-      editarcliente();
+      gerenciadorClientes();
+      // editarcliente();
       break;
    case 6:
       system("cls");

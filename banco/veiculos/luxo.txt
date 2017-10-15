@@ -1,1 +1,2 @@
 5555|5555|ford|ka|gelo|2010|flex|(null)|0.000000
+101010|101010|legal|bacana|gelo|2019|flex|luxo|289.899994

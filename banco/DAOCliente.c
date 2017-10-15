@@ -1,3 +1,4 @@
+int mostrarCliente();
 void zeraString(char a[64])
 {
    for (int i = 0; i < 64; i++)
@@ -60,7 +61,6 @@ int tamanhocpf(String cpf)
    }
    return tamanhocpf;
 }
-void mostrarCliente();
 
 int lerCliente(String cpf)
 {
@@ -106,7 +106,7 @@ int lerCliente(String cpf)
       }
       if (cont2 == tamcpf)
       {
-      mostrarCliente(lista[j]);
+      return mostrarCliente(lista[j],j);
       }
       cont2 = 0;
       contador = 0;
@@ -122,5 +122,7 @@ void gravarCliente(Cliente a)
    }
    fprintf(escreve, "%s|%s|%s|%s|%s|%s|%s\n", a.nome, a.cpf, a.rg, a.nacionalidade, a.cnh, a.nascimento, a.validadeCNH);
    fclose(escreve);
-   printf("Cadastrado com sucesso");
+   printf("Cadastrado com sucesso\n");
+   getchar();
+   fflush(stdin);  
 }

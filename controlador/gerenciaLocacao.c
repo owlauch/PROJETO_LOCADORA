@@ -1,8 +1,11 @@
 void menuPrincipal();
+int lerCliente();
 
 int registrarlocacao()
 {
-   int opSelecao, carroSelecionado=0, clienteSelecionado=0;
+   int opSelecao=0;
+   String cpf = {0};
+   Locado locado;
    do
    {
       printf("Selecao de Veiculo\n");
@@ -21,7 +24,7 @@ int registrarlocacao()
    switch (opSelecao)
    {
    case 1:
-      carroSelecionado = leiaTodosVeiculos();
+      locado.id_Veiculo = leiaTodosVeiculos();
       break;
    case 2:
       do
@@ -40,12 +43,36 @@ int registrarlocacao()
             fflush(stdin);
          }
       } while (opSelecao < 0 || opSelecao > 3);
-      carroSelecionado = leiaCategoria(opSelecao);
+      locado.id_Veiculo = leiaCategoria(opSelecao);
       break;
    }
-   
-   printf("%d",carroSelecionado);
-
+   while (!locado.id_cliente)
+   {
+      printf("CPF do cliente \n");
+      gets(cpf);
+      fflush(stdin);
+      locado.id_cliente = lerCliente(cpf);
+      if (!locado.id_cliente)
+      {
+         printf("cliente não cadastrado ou cpf invalido \n");
+         getchar();
+         fflush(stdin);
+      }
+   }
+   printf("Data de Locacao\n");
+   gets(locado.dataLocacao);
+   fflush(stdin);
+   printf("Data de Devolucao\n");
+   gets(locado.dataDevolucao);
+   fflush(stdin);
+   printf("Qts dia ficara Locado\n");
+   scanf("%d",&locado.diaslocado);
+   fflush(stdin);
+   gravarlocacao(locado);
+   menuPrincipal();
+}
+void registrardevolucao(){
+   menuPrincipal();
 }
 
 int buscarlocacao()
@@ -70,10 +97,10 @@ int selecionarOL()
    printf("Gestor de locacoes - Gerenciador de Locacoes\n");
    printf("Selecione uma Opcao:\n");
    printf("1 - registrar locacao\n");
-   printf("2 - Buscar locacao\n");
-   printf("3 - Mostrar Todos locacoes\n");
-   printf("4 - Apagar locacao\n");
-   printf("5 - Editar locacao\n");
+   printf("2 - Devolucao\n");
+   // printf("3 - Mostrar Todos locacoes\n");
+   // printf("4 - Apagar locacao\n");
+   // printf("5 - Editar locacao\n");
    printf("6 - Menu Principal \n");
    scanf("%d", &i);
    fflush(stdin);
@@ -89,24 +116,28 @@ void gerenciadorLocacoes()
    case 1:
       system("cls");
       registrarlocacao();
+      gerenciadorLocacoes();
       break;
-   case 2:
+      case 2:
       system("cls");
-      buscarlocacao();
+      registrardevolucao();
+      gerenciadorLocacoes();
       break;
-   case 3:
+      case 3:
       system("cls");
-      mostrarClientes();
+      gerenciadorLocacoes();
       break;
-   case 4:
+      case 4:
       system("cls");
-      apagarlocacao();
+      // apagarlocacao();
+      gerenciadorLocacoes();
       break;
-   case 5:
+      case 5:
       system("cls");
-      editarlocacao();
+      // editarlocacao();
+      gerenciadorLocacoes();
       break;
-   case 6:
+      case 6:
       system("cls");
       menuPrincipal();
       break;

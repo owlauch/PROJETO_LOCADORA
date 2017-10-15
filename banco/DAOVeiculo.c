@@ -30,7 +30,9 @@ void gravarVeiculo(Veiculo a, int i)
    }
    fprintf(escreve, "%s|%s|%s|%s|%s|%s|%s|%s|%f\n", a.placa, a.renavam, a.marca, a.modelo, a.cor, a.categoria, a.anoVeiculo, a.combustivel, valor);
    fclose(escreve);
-   printf("Cadastrado com sucesso");
+   printf("Cadastrado com sucesso\n");
+   getchar();
+   fflush(stdin);
 }
 void gravaeluxo(float valor, Veiculo a)
 {

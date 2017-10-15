@@ -65,6 +65,7 @@ int cadastrarveiculo()
    gets(veiculo.combustivel);
    fflush(stdin);
    gravarVeiculo(veiculo, i);
+   menuPrincipal();
 }
 
 int buscarveiculo()
@@ -80,6 +81,7 @@ int mostrarTodosVeiculos(String veiculo[100])
    {
       printf("ID Veiculo: %d\n",1+i);
       printf("---------------\n");
+      mostrarveiculo(veiculo[i]);
       i++;
    }
    do
@@ -175,10 +177,10 @@ int selecionarOV()
    printf("Gestor de Locacoes - Gerenciador de Veiculos\n");
    printf("Selecione uma Opcao:\n");
    printf("1 - Cadastrar Veiculo\n");
-   printf("2 - Buscar veiculo\n");
+   printf("2 - Mostrar veiculos Categoria\n");
    printf("3 - Mostrar Todos veiculos\n");
-   printf("4 - Apagar veiculo\n");
-   printf("5 - Editar veiculo\n");
+   // printf("4 - Apagar veiculo\n");
+   // printf("5 - Editar veiculo\n");
    printf("6 - Menu Principal \n");
    scanf("%d", &i);
    fflush(stdin);
@@ -187,7 +189,8 @@ int selecionarOV()
 
 void gerenciadorVeiculos()
 {
-   int selecionado;
+   system("cls");
+   int selecionado, opSelecao=0;
    selecionado = selecionarOV();
    switch (selecionado)
    {
@@ -197,19 +200,37 @@ void gerenciadorVeiculos()
       break;
    case 2:
       system("cls");
-      buscarveiculo();
+      do
+      {
+         system("cls");
+         printf("Selecione a Categoria \n");
+         printf("1 - selecao economica \n");
+         printf("2 - selecao intermediaria \n");
+         printf("3 - selecao luxo \n");
+         scanf("%d", &opSelecao);
+         fflush(stdin);
+         if (opSelecao < 0 || opSelecao > 3)
+         {
+            printf("Opcao inexistente \n");
+            getchar();
+            fflush(stdin);
+         }
+      } while (opSelecao < 0 || opSelecao > 3);
+      leiaCategoria(opSelecao);
+      gerenciadorVeiculos();
       break;
    case 3:
       system("cls");
-      mostrarClientes();
+      leiaTodosVeiculos();
+      gerenciadorVeiculos();
       break;
    case 4:
       system("cls");
-      apagarveiculo();
+      gerenciadorVeiculos();
       break;
    case 5:
       system("cls");
-      editarveiculo();
+      gerenciadorVeiculos();
       break;
    case 6:
       system("cls");

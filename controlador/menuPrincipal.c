@@ -17,6 +17,7 @@ int selecionar(){
 }
 
 void menuPrincipal(){
+   system("cls");
    int selecionado;
    selecionado = selecionar();
    switch (selecionado)
