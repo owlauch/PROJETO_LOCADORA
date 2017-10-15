@@ -10,11 +10,9 @@
 
 int main(int argc, char const *argv[])
 {
+   system("cls");
    menuPrincipal();
-   
-   // cadastrarCliente();
-   // Cliente cliente;
-   // gets(cliente.nome);
-   // gravarCliente(cliente); 
+   // buscarCliente();
+   // registrarlocacao();
    return 0;
 }

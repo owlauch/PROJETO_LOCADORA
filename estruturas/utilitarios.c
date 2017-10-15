@@ -1,4 +1,4 @@
-typedef char String[64];
+typedef char String[500];
 
 typedef struct Data
 {

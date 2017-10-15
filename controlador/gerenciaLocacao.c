@@ -2,6 +2,50 @@ void menuPrincipal();
 
 int registrarlocacao()
 {
+   int opSelecao, carroSelecionado=0, clienteSelecionado=0;
+   do
+   {
+      printf("Selecao de Veiculo\n");
+      printf("1 - Todos os Veiculos\n");
+      printf("2 - Por Categoria\n");
+      scanf("%d", &opSelecao);
+      fflush(stdin);
+      if (opSelecao < 0 || opSelecao > 2)
+      {
+         printf("Opcao inexistente \n");
+         getchar();
+         fflush(stdin);
+         system("cls");
+      }
+   } while (opSelecao < 0 || opSelecao > 2);
+   switch (opSelecao)
+   {
+   case 1:
+      carroSelecionado = leiaTodosVeiculos();
+      break;
+   case 2:
+      do
+      {
+         system("cls");
+         printf("Selecione a Categoria \n");
+         printf("1 - selecao economica \n");
+         printf("2 - selecao intermediaria \n");
+         printf("3 - selecao luxo \n");
+         scanf("%d", &opSelecao);
+         fflush(stdin);
+         if (opSelecao < 0 || opSelecao > 3)
+         {
+            printf("Opcao inexistente \n");
+            getchar();
+            fflush(stdin);
+         }
+      } while (opSelecao < 0 || opSelecao > 3);
+      carroSelecionado = leiaCategoria(opSelecao);
+      break;
+   }
+   
+   printf("%d",carroSelecionado);
+
 }
 
 int buscarlocacao()

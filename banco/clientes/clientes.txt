@@ -1,4 +1,3 @@
-
-olivir|1|1|1|1|1|1
-teste|1|1|1|1|1|1
-teste de cadastro|1|1|1|1|1|1
+olivir|07592084929|108557583|Brasileiro|10|14/05/1992|10/10/2020
+teste|4321|1|1|1|1|1
+teste de cadastro|4444|1|1|1|1|1

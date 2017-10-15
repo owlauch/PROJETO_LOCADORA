@@ -1,2 +1,5 @@
-teste|1|1|1|1||1|1|1.000000
-1|1|1|1|1|economica|1|1|1.000000
+1111|renavam|marca|modelo|cor|categoria|anoveiculo|combustivel|valor
+2222|1|1|1|1|economica|1|gasolina|1.000000
+3333|1234|celta||branco|economica|2010|gasolina|25.000000
+4444|4444|celta|muito bom |branca|intermediaria|2015|flex|25000.000000
+5555|5555|ford|ka|gelo|luxo|2010|flex|20000.000000

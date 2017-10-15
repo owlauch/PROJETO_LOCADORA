@@ -1,4 +1,5 @@
 void menuPrincipal();
+void mostrarCliente();
 
 void cadastrarCliente()
 {
@@ -7,11 +8,11 @@ void cadastrarCliente()
    printf("Digite o nome do cliente \n");
    gets(cliente.nome);
    fflush(stdin);
-   printf("Digite o RG do cliente \n");
-   gets(cliente.rg);
-   fflush(stdin);
    printf("Digite o CPF do cliente \n");
    gets(cliente.cpf);
+   fflush(stdin);
+   printf("Digite o RG do cliente \n");
+   gets(cliente.rg);
    fflush(stdin);
    printf("Digite a Nacionalidade do cliente \n");
    gets(cliente.nacionalidade);
@@ -28,15 +29,65 @@ void cadastrarCliente()
    gravarCliente(cliente);
 };
 
-int buscarCliente()
+void buscarCliente()
 {
+   String cpf,cliente;
+   printf("Digite o CPF do cliente \n");
+   gets(cpf);
+   fflush(stdin);
+   lerCliente(cpf);
 }
 
 int deletarCliente()
 {
 }
+void mostrarCliente(String cliente){
+   int contPipe=0, cont[10]={0,0,0,0,0,0,0,0,0,0};
+   String nome={0}, cpf={0},rg={0},nacionalidade={0},cnh={0},nascimento = {0},validadeCNH={0};
+   for(int i = 0; cliente[i]; i++)
+   {
+      if(cliente[i]!='|' && contPipe==0){
+         nome[cont[0]]=cliente[i];
+         cont[0]++;
+      }
+      if(cliente[i]!='|' && contPipe ==1){
+         cpf[cont[1]]=cliente[i];
+         cont[1]++;;
+      }
+      if(cliente[i]!='|' && contPipe ==2){
+         rg[cont[2]]=cliente[i];
+         cont[2]++;;
+      }
+      if(cliente[i]!='|' && contPipe ==3){
+         nacionalidade[cont[3]]=cliente[i];
+         cont[3]++;;
+      }
+      if(cliente[i]!='|' && contPipe ==4){
+         cnh[cont[4]]=cliente[i];
+         cont[4]++;;
+      }
+      if(cliente[i]!='|' && contPipe ==4){
+         nascimento[cont[5]]=cliente[i];
+         cont[5]++;;
+      }
+      if(cliente[i]!='|' && contPipe ==4){
+         validadeCNH[cont[6]]=cliente[i];
+         cont[6]++;;
+      }
+      if(cliente[i]=='|'){
+         contPipe++;
+      }
+   }
+   printf("Nome:%s\n",nome);
+   printf("CPF:%s\n",cpf);
+   printf("RG:%s\n",rg);
+   printf("Nacionalidade:%s\n",nacionalidade);
+   printf("CNH:%s\n",cnh);
+   printf("Nascimento:%s\n",nascimento);
+   printf("Validade CNH:%s\n  ",validadeCNH);
 
-int mostrarClientes()
+}
+void mostrarClientes()
 {
 }
 
