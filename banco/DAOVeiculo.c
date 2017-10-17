@@ -1,6 +1,7 @@
 void gravaeconomica(float valor, Veiculo a);
 void gravaeluxo(float valor, Veiculo a);
 void gravaeinter(float valor, Veiculo a);
+float verificaValor(); 
 int mostrarTodosVeiculos();
 
 void gravarVeiculo(Veiculo a, int i)
@@ -116,4 +117,87 @@ int leiaCategoria(int selecionado)
       fclose(le);
       return mostrarTodosVeiculos(lista);
    }
+}
+
+int lerPlaca(String placa)
+{
+   String lista[100], listaPlaca[100];
+   int contador = 0, resultado = 0, cont2[2] = {0, 0}, tamplaca = 0,dias=0;
+   float valor = 0;
+   bool estaNalista;
+
+   zeraString(lista[0]);
+
+   FILE *le = fopen("banco/veiculos/veiculos.txt", "r");
+
+   while (fgets(lista[contador], 81, le))
+   {
+      contador++;
+   }
+   fclose(le);
+   contador = 0;
+
+   tamplaca = tamanhocpf(placa);
+   for (int j = 0; j < 100; j++)
+   {
+      for (int i = 0; i < 64; i++)
+      {
+            if (lista[j][i] == '|')
+            {
+               i++;
+               contador++;
+            }
+            if ((contador == 0))
+            {
+               if ((placa[cont2[0]] == lista[j][i]))
+               {
+                  cont2[0]++;
+               }
+            }
+      }
+      if (cont2[0] == tamplaca)
+      {
+         valor = verificaValor(lista[j]);
+         dias = verificadia(j,valor);
+         if(dias==-1){
+            printf("Não foi locado ou não existe o veiculo");
+            getchar();
+            fflush(stdin);
+         }
+         // return mostrarCliente(lista[j],j);
+      }
+      cont2[0] = 0;
+      cont2[1] = 0;
+      contador = 0;
+   }
+}
+
+float verificaValor(String lista){
+   int contador=0, cont=0;
+   float valor=0;
+   for(int i = 0; lista[i]; i++)
+   {
+      if (lista[i] == '|')
+      {
+         i++;
+         contador++;
+      }
+      if ((contador==5) &&(cont==0) )
+      {
+         switch (lista[i])
+         {
+         case 'e':
+            valor = 89.90;
+            break;
+         case 'i':
+            valor = 174.90;
+            break;
+         case 'l':
+            valor = 289.90;
+            break;
+         }
+         cont++;
+      }
+   }
+   return valor;
 }

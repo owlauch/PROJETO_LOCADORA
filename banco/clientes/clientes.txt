@@ -1,5 +1,1 @@
-olivir|07592084929|108557583|Brasileiro|10|14/05/1992|10/10/2020
-teste|4321|1|1|1|1|1
-teste de cadastro|4444|1|1|1|1|1
-renata |07592084929|10|brasileira|sem|21012001|nunca
-teste15|151515|151515|brasileiro|151515|15/15/20115|nunca
+1ø teste|1234597|12351236|nacionalidade|cnh|datanascimento|20/20

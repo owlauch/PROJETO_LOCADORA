@@ -1,5 +1,6 @@
 void menuPrincipal();
 int lerCliente();
+int lerLocacao(int id_Veiculo,float vv);
 
 int registrarlocacao()
 {
@@ -65,13 +66,18 @@ int registrarlocacao()
    printf("Data de Devolucao\n");
    gets(locado.dataDevolucao);
    fflush(stdin);
-   printf("Qts dia ficara Locado\n");
-   scanf("%d",&locado.diaslocado);
-   fflush(stdin);
    gravarlocacao(locado);
    menuPrincipal();
 }
 void registrardevolucao(){
+   String placa;
+   String veiculo;
+   int id;
+   printf("Qual a Placa do Veiculo:\n");
+   gets(placa);
+   fflush(stdin);
+   lerPlaca(placa);
+   getchar();
    menuPrincipal();
 }
 
