@@ -1,0 +1,5 @@
+Não foi utilizado nenhuma biblioteca externa.
+a copilação foi feita com o software MinGW mais recente.
+http://www.mingw.org/
+para afetuar a copilação apenas é nescessario copilar o main.c
+

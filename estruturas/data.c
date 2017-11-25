@@ -1,10 +1,8 @@
 
 bool validaTamanho(String string, int tamanho, bool minimo){
 
-	int size = strlen(string);
-
-	if((!minimo && size == tamanho) || (minimo &&  size >= tamanho))
-		return true;
+	// if((!minimo && size == tamanho) || (minimo &&  size >= tamanho))
+	// 	return true;
 
 	return false;
 }

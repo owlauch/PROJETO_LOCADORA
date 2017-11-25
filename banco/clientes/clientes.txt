@@ -1,1 +1,2 @@
-1ø teste|1234597|12351236|nacionalidade|cnh|datanascimento|20/20
+teste|1234597|12351236|nacionalidade|cnh|datanascimento|20/20
+teste|0000|0000|brasileiro|12351236|13/03/2017|10/10/2010

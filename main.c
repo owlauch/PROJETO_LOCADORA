@@ -12,7 +12,6 @@ int main(int argc, char const *argv[])
 {
    system("cls");
    menuPrincipal();
-   // buscarCliente();
-   // registrarlocacao();
    return 0;
 }
+

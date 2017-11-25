@@ -2,7 +2,7 @@ void gravaeconomica(float valor, Veiculo a);
 void gravaeluxo(float valor, Veiculo a);
 void gravaeinter(float valor, Veiculo a);
 float verificaValor(); 
-int mostrarTodosVeiculos();
+void mostrarTodosVeiculos();
 
 void gravarVeiculo(Veiculo a, int i)
 {
@@ -66,7 +66,7 @@ void gravaeconomica(float valor, Veiculo a)
    fclose(escreve);
 }
 
-int leiaTodosVeiculos()
+void leiaTodosVeiculos(String placaSelecionada)
 {
    String lista[100], listaCPF[100];
    int contador = 0, resultado = 0, cont2 = 0, tamcpf = 0;
@@ -79,9 +79,9 @@ int leiaTodosVeiculos()
       contador++;
    }
    fclose(le);
-   return mostrarTodosVeiculos(lista);
+   mostrarTodosVeiculos(lista,placaSelecionada);
 }
-int leiaCategoria(int selecionado)
+void leiaCategoria(int selecionado,String placaSelecionada)
 {
    String lista[100], listaCPF[100];
    int contador = 0, resultado = 0, cont2 = 0, tamcpf = 0;
@@ -95,7 +95,7 @@ int leiaCategoria(int selecionado)
          contador++;
       }
       fclose(le);
-      return mostrarTodosVeiculos(lista);
+      mostrarTodosVeiculos(lista,placaSelecionada);
    }
    if (selecionado == 2)
    {
@@ -105,7 +105,7 @@ int leiaCategoria(int selecionado)
          contador++;
       }
       fclose(le);
-      return mostrarTodosVeiculos(lista);
+      mostrarTodosVeiculos(lista,placaSelecionada);
    }
    if (selecionado == 3)
    {
@@ -115,7 +115,7 @@ int leiaCategoria(int selecionado)
          contador++;
       }
       fclose(le);
-      return mostrarTodosVeiculos(lista);
+      mostrarTodosVeiculos(lista,placaSelecionada);
    }
 }
 
@@ -164,7 +164,7 @@ int lerPlaca(String placa)
             getchar();
             fflush(stdin);
          }
-         // return mostrarCliente(lista[j],j);
+          return mostrarCliente(lista[j],j);
       }
       cont2[0] = 0;
       cont2[1] = 0;

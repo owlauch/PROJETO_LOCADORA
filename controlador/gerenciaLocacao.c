@@ -1,6 +1,6 @@
 void menuPrincipal();
 int lerCliente();
-int lerLocacao(int id_Veiculo,float vv);
+int lerLocacao(int id_Veiculo,float vv, String placa);
 
 int registrarlocacao()
 {
@@ -25,7 +25,7 @@ int registrarlocacao()
    switch (opSelecao)
    {
    case 1:
-      locado.id_Veiculo = leiaTodosVeiculos();
+       leiaTodosVeiculos(locado.placa);
       break;
    case 2:
       do
@@ -44,7 +44,7 @@ int registrarlocacao()
             fflush(stdin);
          }
       } while (opSelecao < 0 || opSelecao > 3);
-      locado.id_Veiculo = leiaCategoria(opSelecao);
+      leiaCategoria(opSelecao,locado.placa);
       break;
    }
    while (!locado.id_cliente)
@@ -66,7 +66,14 @@ int registrarlocacao()
    printf("Data de Devolucao\n");
    gets(locado.dataDevolucao);
    fflush(stdin);
+   if(buscaPlaca(locado.placa)){
    gravarlocacao(locado);
+   }
+   else 
+   {
+      printf("Veiculo ja alocado!\n");
+      system("pause");
+   }
    menuPrincipal();
 }
 void registrardevolucao(){

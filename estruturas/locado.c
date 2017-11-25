@@ -1,5 +1,5 @@
 
 typedef struct {
    int id_cliente, id_Veiculo;
-   String dataLocacao, dataDevolucao; 
+   String dataLocacao, dataDevolucao,placa; 
 }Locado;
