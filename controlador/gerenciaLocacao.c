@@ -1,6 +1,6 @@
 void menuPrincipal();
 int lerCliente();
-int lerLocacao(int id_Veiculo, float vv, String placa);
+void ajusteMultas();
 
 int registrarlocacao()
 {
@@ -68,7 +68,7 @@ int registrarlocacao()
     fflush(stdin);
     printf("Seguro \n 1-sim \n 2-nao\n");
     fflush(stdin);
-    scanf("%d",&locado.seguro);
+    scanf("%d", &locado.seguro);
     fflush(stdin);
     if (buscaPlaca(locado.placa))
     {
@@ -83,30 +83,55 @@ int registrarlocacao()
 }
 void registrardevolucao()
 {
-    Devolucao devo;
+    Devolucao devo[1];
     int id;
     printf("Qual a Placa do Veiculo:\n");
-    gets(devo.placa);
+    gets(devo[0].placa);
     fflush(stdin);
-    lerPlaca(devo.placa);
+    printf("data De entrega do Veiculo:\n");
+    gets(devo[0].dataDevolucao);
+    fflush(stdin);
+    lerPlaca(devo);
     printf("o carro foi abastecido?\n 1-sim \n 2-nao\n");
-    scanf("%d",&devo.abas);
+    scanf("%d", &devo[0].abas);
     fflush(stdin);
     printf("o carro esta limpo? \n 1-sim \n 2-nao\n");
-    scanf("%d",&devo.limp);
+    scanf("%d", &devo[0].limp);
     fflush(stdin);
     printf("houve Danos ao veiculo? \n 1-sim \n 2-nao\n");
-    scanf("%d",&devo.dano);
+    scanf("%d", &devo[0].dano);
     fflush(stdin);
-    if(devo.dano==1){
+    if (devo[0].dano == 1)
+    {
         printf("qual foi o valor do dano:\n");
-        scanf("%f",&devo.valorDano);
+        scanf("%f", &devo[0].valorDano);
         fflush(stdin);
-        devo.valorDano+=devo.valorDano*0.15;
-        printf("%f", devo.valorDano);
-        system("pause");
+        devo[0].valorDano *= 1.15;
     }
+    ajusteMultas(devo);
+    if (devo[0].seguro == 1)
+    {
+        devo[0].vDiaria *= 1.10;
+    }
+        
+        printf("Diarias normais total RS:%.2f\n", (devo[0].vDiaria * devo[0].diasLocado));
+        printf("Diarias extra total RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras));
+        printf("total Diarias RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
+        printf("total Geral RS:%.2f\n", devo[0].valorDano + devo[0].vLim + devo[0].vCom + ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
+        getchar();
+        system("pause");
     menuPrincipal();
+}
+void ajusteMultas(Devolucao d[1])
+{
+    if (d[0].abas == 2)
+    {
+        d[0].vCom = 500;
+    }
+    if (d[0].limp == 2)
+    {
+        d[0].vLim = 100;
+    }
 }
 
 int buscarlocacao()
@@ -132,9 +157,6 @@ int selecionarOL()
     printf("Selecione uma Opcao:\n");
     printf("1 - registrar locacao\n");
     printf("2 - Devolucao\n");
-    // printf("3 - Mostrar Todos locacoes\n");
-    // printf("4 - Apagar locacao\n");
-    // printf("5 - Editar locacao\n");
     printf("6 - Menu Principal \n");
     scanf("%d", &i);
     fflush(stdin);

@@ -5,7 +5,7 @@ typedef struct {
 }Locado;
 
 typedef struct{
-    String placa;
-    int abas,limp,dano;
-    float valorDano;
+    String placa,dataDevolucao;
+    int abas,limp,dano,diasLocado,diasExtras,seguro;
+    float valorDano,vDiaria,vLim,vCom;
 }Devolucao;

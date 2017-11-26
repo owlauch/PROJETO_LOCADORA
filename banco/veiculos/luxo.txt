@@ -1,2 +1,3 @@
 5555|5555|ford|ka|gelo|luxo|2010|flex|(null)|0.000000
 101010|101010|legal|bacana|gelo|luxo|2019|flex|289.899994
+xx1111|xx1111|vw|fox|prata|2013|flex|luxo|289.899994
