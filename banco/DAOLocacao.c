@@ -14,7 +14,7 @@ void gravarlocacao(Locado a)
    {
       printf("erro ao ler arquivo");
    }
-   fprintf(escreve, "%s|%d|%s|%s\n", a.placa, a.id_cliente, a.dataLocacao, a.dataDevolucao);
+   fprintf(escreve, "%s|%d|%s|%s|$d\n", a.placa, a.id_cliente, a.dataLocacao, a.dataDevolucao,a.seguro);
    fclose(escreve);
    printf("Cadastrado com sucesso");
    getchar();
