@@ -6,3 +6,4 @@
 101010|101010|legal|bacana|gelo|luxo|2019|flex|289.899994
 7777|710928735|ford|ka|branco|intermediaria|1998|flex|174.899994
 xx1111|xx1111|vw|fox|prata|luxo|2013|flex|289.899994
+xx222|xx222|ford|ka|zinza|luxo|2018|flex|289.899994
