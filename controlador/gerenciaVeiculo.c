@@ -1,18 +1,16 @@
 void menuPrincipal();
 void mostrarveiculo();
+int selecionarOV();
 
 int cadastrarveiculo()
 {
    int i = 0;
    Veiculo veiculo;
-   char eco[] = "economica";
-   char inter[] = "intermediaria";
-   char luxo[] = "luxo";
 
    printf("Digite placa do veiculo \n");
    gets(veiculo.placa);
    fflush(stdin);
-   printf("Digite o n° do renavam \n");
+   printf("Digite o numero do renavam \n");
    gets(veiculo.renavam);
    fflush(stdin);
    printf("Digite a marca do veiculo \n");
@@ -24,40 +22,7 @@ int cadastrarveiculo()
    printf("Digite a cor do veiculo \n");
    gets(veiculo.cor);
    fflush(stdin);
-   do
-   {
-      printf("Escolha a categoria do veiculo \n");
-      printf("1 - economica  \n");
-      printf("2 - intermediaria \n");
-      printf("3 - luxo \n");
-      scanf("%d", &i);
-      fflush(stdin);
-      if (i > 3 || i < 0)
-      {
-         printf("Opcao invalida tente novamente");
-         getchar();
-         fflush(stdin);
-         system("cls");
-      }
-      else
-      {
-         switch (i)
-         {
-         case 1:
-            strcpy(veiculo.categoria, eco);
-            break;
-         case 2:
-            strcpy(veiculo.categoria, inter);
-            break;
-         case 3:
-            strcpy(veiculo.categoria, luxo);
-            break;
-         default:
-            break;
-         }
-      }
-   } while (i > 3 || i < 0);
-   fflush(stdin);
+   escolhaCategoria();
    printf("Digite o ano do veiculo \n");
    gets(veiculo.anoVeiculo);
    fflush(stdin);
@@ -191,7 +156,8 @@ int cadastrarCategoria()
       fflush(stdin);
       scanf("%f",&categoria.valor);
       fflush(stdin);
-      gravaCategoria();
+      gravaCategoria(categoria);
+      selecionarOV();
 }
 
 int selecionarOV()

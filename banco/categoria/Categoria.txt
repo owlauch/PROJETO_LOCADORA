@@ -1,0 +1,4 @@
+economico|89.90
+intermediaria|174.90
+luxo|289.90
+Esportivo|500.00
