@@ -1,2 +1,3 @@
-xxx-111|12351|ford|ka|branco|Sedan|2017|flex|0.00 
+xxx-111|12351|ford|ka|branco|Sedan|2017|flex|200.00 
 xxx-222|1235|fiat|uno|branco|economico|2017|flex|89.90 
+xxx-333|12351|volvo|teste|preto|Esportivo|2017|flex|500.00 

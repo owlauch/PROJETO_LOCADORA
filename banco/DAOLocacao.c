@@ -172,8 +172,6 @@ int buscadias(String datas, String entrega)
 
 int lerLocacao(int id_Veiculo, float vv, String placa)
 {
-    printf("klajsldfkja");
-    system("pause");
     String lista[100], idVeiculo = {0}, devolucao;
     int contador = 0, resultado = 0, cont2 = 0, tamid = 0, dias = 0, dias2 = 0, tamplaca = 0;
     bool estaNalista;

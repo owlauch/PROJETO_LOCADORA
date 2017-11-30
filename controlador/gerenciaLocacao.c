@@ -7,6 +7,7 @@ int registrarlocacao()
     int opSelecao = 0;
     String cpf = {0};
     Locado locado;
+    Veiculo v[1];
     do
     {
         printf("Selecao de Veiculo\n");
@@ -28,22 +29,8 @@ int registrarlocacao()
         leiaTodosVeiculos(locado.placa);
         break;
     case 2:
-        do
-        {
-            system("cls");
-            printf("Selecione a Categoria \n");
-            printf("1 - selecao economica \n");
-            printf("2 - selecao intermediaria \n");
-            printf("3 - selecao luxo \n");
-            scanf("%d", &opSelecao);
-            fflush(stdin);
-            if (opSelecao < 0 || opSelecao > 3)
-            {
-                printf("Opcao inexistente \n");
-                getchar();
-                fflush(stdin);
-            }
-        } while (opSelecao < 0 || opSelecao > 3);
+        escolhaCategoria(v);
+        puts(v[0].categoria);
         leiaCategoria(opSelecao, locado.placa);
         break;
     }
@@ -85,6 +72,7 @@ void registrardevolucao()
 {
     Devolucao devo[1];
     int id;
+    float diariaNomal=0,diariaExtra=0;
     printf("Qual a Placa do Veiculo:\n");
     gets(devo[0].placa);
     fflush(stdin);
@@ -121,10 +109,12 @@ void registrardevolucao()
     printf("%d\n", devo[0].diasLocado);
     printf("%d \n", devo[0].diasExtras);
 
-    printf("Diarias normais total RS:%.2f\n", (devo[0].vDiaria * devo[0].diasLocado));
-    printf("Diarias extra total RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras));
-    printf("total Diarias RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
-    printf("total Geral RS:%.2f\n", devo[0].valorDano + devo[0].vLim + devo[0].vCom + ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
+    diariaNomal=(devo[0].vDiaria * devo[0].diasLocado);
+    diariaExtra=((devo[0].vDiaria * 2) * devo[0].diasExtras);
+    printf("Diarias normais total RS:%.2f\n",diariaNomal);
+    printf("Diarias extra total RS:%.2f\n", diariaExtra);
+    printf("total Diarias RS:%.2f\n", diariaNomal+diariaExtra);
+    printf("total Geral RS:%.2f\n", devo[0].valorDano + devo[0].vLim + devo[0].vCom + diariaNomal+diariaExtra);
     getchar();
     system("pause");
     menuPrincipal();
