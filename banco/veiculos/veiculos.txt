@@ -1,10 +1,2 @@
-1111|renavam|marca|modelo|cor|eategoria|anoveiculo|combustivel|289,90
-2222|1|1|1|1|economica|1|gasolina|1.000000
-3333|1234|celta|lkasj|branco|economica|2010|gasolina|25.000000
-4444|4444|celta|muito bom |branca|intermediaria|2015|flex|25000.000000
-5555|5555|ford|ka|gelo|luxo|2010|flex|20000.000000
-101010|101010|legal|bacana|gelo|luxo|2019|flex|289.899994
-7777|710928735|ford|ka|branco|intermediaria|1998|flex|174.899994
-xx1111|xx1111|vw|fox|prata|luxo|2013|flex|289.899994
-xx222|xx222|ford|ka|zinza|luxo|2018|flex|289.899994
-as|askj|skdjd|dkj|fkj||kjs|dkj|0.000000
+xxx-111|12351|ford|ka|branco|Sedan|2017|flex|0.00 
+xxx-222|1235|fiat|uno|branco|economico|2017|flex|89.90 

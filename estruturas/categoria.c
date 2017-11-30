@@ -1,5 +1,4 @@
 
 typedef struct{
-   String nome;
-   float valor;
+   String nome, valor;
 }Categoria;

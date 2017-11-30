@@ -2,3 +2,5 @@ economico|89.90
 intermediaria|174.90
 luxo|289.90
 Esportivo|500.00
+Sedan|400.00
+teste|200.68

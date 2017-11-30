@@ -5,29 +5,29 @@ int selecionarOV();
 int cadastrarveiculo()
 {
    int i = 0;
-   Veiculo veiculo;
+   Veiculo veiculo[1];
 
    printf("Digite placa do veiculo \n");
-   gets(veiculo.placa);
+   gets(veiculo[0].placa);
    fflush(stdin);
    printf("Digite o numero do renavam \n");
-   gets(veiculo.renavam);
+   gets(veiculo[0].renavam);
    fflush(stdin);
    printf("Digite a marca do veiculo \n");
-   gets(veiculo.marca);
+   gets(veiculo[0].marca);
    fflush(stdin);
    printf("Digite o modelo do veiculo \n");
-   gets(veiculo.modelo);
+   gets(veiculo[0].modelo);
    fflush(stdin);
    printf("Digite a cor do veiculo \n");
-   gets(veiculo.cor);
+   gets(veiculo[0].cor);
    fflush(stdin);
-   escolhaCategoria();
+   escolhaCategoria(veiculo);
    printf("Digite o ano do veiculo \n");
-   gets(veiculo.anoVeiculo);
+   gets(veiculo[0].anoVeiculo);
    fflush(stdin);
    printf("Digite o combustivel do veiculo \n");
-   gets(veiculo.combustivel);
+   gets(veiculo[0].combustivel);
    fflush(stdin);
    gravarVeiculo(veiculo, i);
    menuPrincipal();
@@ -154,7 +154,7 @@ int cadastrarCategoria()
       fflush(stdin);
       printf("digite o valor da categoria\n");
       fflush(stdin);
-      scanf("%f",&categoria.valor);
+      gets(categoria.valor);
       fflush(stdin);
       gravaCategoria(categoria);
       selecionarOV();
@@ -166,7 +166,7 @@ int selecionarOV()
    printf("Gestor de Locacoes - Gerenciador de Veiculos\n");
    printf("Selecione uma Opcao:\n");
    printf("1 - Cadastrar Veiculo\n");
-   printf("2 - Mostrar veiculos Categoria\n");
+//    printf("2 - Mostrar veiculos Categoria\n");
    printf("3 - Mostrar Todos veiculos\n");
    // printf("4 - Apagar veiculo\n");
    printf("5 - cadastrar categoria\n");
@@ -190,23 +190,7 @@ void gerenciadorVeiculos()
       break;
    case 2:
       system("cls");
-      do
-      {
-         system("cls");
-         printf("Selecione a Categoria \n");
-         printf("1 - selecao economica \n");
-         printf("2 - selecao intermediaria \n");
-         printf("3 - selecao luxo \n");
-         scanf("%d", &opSelecao);
-         fflush(stdin);
-         if (opSelecao < 0 || opSelecao > 3)
-         {
-            printf("Opcao inexistente \n");
-            getchar();
-            fflush(stdin);
-         }
-      } while (opSelecao < 0 || opSelecao > 3);
-      leiaCategoria(opSelecao,placa);
+      // leiaCategoria(opSelecao,placa);
       gerenciadorVeiculos();
       break;
    case 3:

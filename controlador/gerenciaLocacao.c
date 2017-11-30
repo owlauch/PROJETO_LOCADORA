@@ -98,28 +98,35 @@ void registrardevolucao()
     printf("o carro esta limpo? \n 1-sim \n 2-nao\n");
     scanf("%d", &devo[0].limp);
     fflush(stdin);
-    printf("houve Danos ao veiculo? \n 1-sim \n 2-nao\n");
-    scanf("%d", &devo[0].dano);
-    fflush(stdin);
-    if (devo[0].dano == 1)
+    if (devo[0].seguro == 0)
     {
-        printf("qual foi o valor do dano:\n");
-        scanf("%f", &devo[0].valorDano);
+        printf("houve Danos ao veiculo? \n 1-sim \n 2-nao\n");
+        scanf("%d", &devo[0].dano);
         fflush(stdin);
-        devo[0].valorDano *= 1.15;
+        if (devo[0].dano == 1)
+        {
+            printf("qual foi o valor do dano:\n");
+            scanf("%f", &devo[0].valorDano);
+            fflush(stdin);
+            devo[0].valorDano *= 1.15;
+        }
     }
     ajusteMultas(devo);
     if (devo[0].seguro == 1)
     {
+        devo[0].valorDano=0;
         devo[0].vDiaria *= 1.10;
     }
-        
-        printf("Diarias normais total RS:%.2f\n", (devo[0].vDiaria * devo[0].diasLocado));
-        printf("Diarias extra total RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras));
-        printf("total Diarias RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
-        printf("total Geral RS:%.2f\n", devo[0].valorDano + devo[0].vLim + devo[0].vCom + ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
-        getchar();
-        system("pause");
+    printf("%.2f\n", devo[0].vDiaria);
+    printf("%d\n", devo[0].diasLocado);
+    printf("%d \n", devo[0].diasExtras);
+
+    printf("Diarias normais total RS:%.2f\n", (devo[0].vDiaria * devo[0].diasLocado));
+    printf("Diarias extra total RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras));
+    printf("total Diarias RS:%.2f\n", ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
+    printf("total Geral RS:%.2f\n", devo[0].valorDano + devo[0].vLim + devo[0].vCom + ((devo[0].vDiaria * 2) * devo[0].diasExtras) + (devo[0].vDiaria * devo[0].diasLocado));
+    getchar();
+    system("pause");
     menuPrincipal();
 }
 void ajusteMultas(Devolucao d[1])

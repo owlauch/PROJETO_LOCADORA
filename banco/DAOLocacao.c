@@ -68,6 +68,9 @@ int lerDiasLocacao(Devolucao devolu[1])
     }
     if (tamplaca == 0)
     {
+        // printf("%d",buscadias(lista[linhaCarroAlocado], 0));
+        // printf("%d",buscadias(lista[linhaCarroAlocado], devolu[0].dataDevolucao));
+        // printf("%d",temseguro(lista[linhaCarroAlocado]));
         devolu[0].diasLocado = buscadias(lista[linhaCarroAlocado], 0);
         devolu[0].diasExtras = buscadias(lista[linhaCarroAlocado], devolu[0].dataDevolucao);
         devolu[0].seguro = temseguro(lista[linhaCarroAlocado]);

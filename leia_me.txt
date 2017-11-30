@@ -1,5 +1,6 @@
-Não foi utilizado nenhuma biblioteca externa.
+﻿Não foi utilizado nenhuma biblioteca externa.
 a copilação foi feita com o software MinGW mais recente.
 http://www.mingw.org/
+https://terminaldeinformacao.com/2015/10/08/como-instalar-e-configurar-o-gcc-no-windows-mingw/
 para afetuar a copilação apenas é nescessario copilar o main.c
 

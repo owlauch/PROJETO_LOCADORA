@@ -1,5 +1,2 @@
-teste|1234597|12351236|nacionalidade|cnh|datanascimento|20/20
-teste|0000|0000|brasileiro|12351236|13/03/2017|10/10/2010
-renata scaraboto|10074283928|134494282|brasileira|123456789|22/01/1997|22/11/2019
-ramon wk|098|098|brasileiro|098|10/10/1995|10/12/2019
-        
+olivir de paula junior|07592084929|108557583|brasileiro|101010|14/05/1992|10/10/2020
+
